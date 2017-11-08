@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <div class="blog-decoration">
+            <div class="blog-decorate-top-page-one"></div>
+            <div class="blog-decorate-top-page-two"></div>
+        </div>
+        <div class="pages">
+            <div class="FAQ-title mb-5">
+                <h2>
+                    <em>Frequently Asked Questions</em>
+                </h2>
+            </div>
+            <div class="questions">
+                <div class="question">
+                    <div class="ask">
+                        <p>Question 1</p>
+                    </div>
+                    <div class="answer">
+                        <p>answer 1 answer 1 answer 1 answer 1 answer 1 answer 1 answer 1 answer 1 </p>
+                    </div>
+                </div> 
+                <div class="question">
+                    <div class="ask">
+                        <p>Question 2</p>
+                    </div>
+                    <div class="answer">
+                        <p>answer 2 answer 2 answer 2 answer 2 answer 2 answer 2 answer 2 answer 2 </p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <p>Question 3</p>
+                    </div>
+                    <div class="answer">
+                        <p>answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 </p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <p>Question 4</p>
+                    </div>
+                    <div class="answer">
+                        <p>answer 4 answer 4 answer 4 answer 4 answer 4 answer 4 answer 4 answer 4 </p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <p>Question 5</p>
+                    </div>
+                    <div class="answer">
+                        <p>answer 5 answer 5 answer 5 answer 5 answer 5 answer 5 answer 5 answer 5 </p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="ask">
+                        <p>Question 6</p>
+                    </div>
+                    <div class="answer">
+                        <p>answer 6 answer 6 answer 6 answer 6 answer 6 answer 6 answer 6 answer 6 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script>
+        $('.questions .question .ask').click(function(){
+            $(this).next().slideToggle(500);
+        });
+    </script>
+</body>
+</html>

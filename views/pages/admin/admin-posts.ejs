@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    
+    <%- include('../../partials/header') %>
+
+    <div class="container">
+        <div class="blog-decoration">
+            <div class="blog-decorate-top-page-one"></div>
+            <div class="blog-decorate-top-page-two"></div>
+        </div>
+        <div class="pages">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin">Profile</a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin/categories">Categories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/admin/posts">Posts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin/translation">Translation</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <nav class="nav nav-tabs" id="myTab" role="tablist">
+                                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All Posts</a>
+                                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Create Post</a>
+                                            </nav>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="tab-content" id="nav-tabContent">
+                                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="card mb-3">
+                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
+                                                                <div class="card-body">
+                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
+                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
+                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
+                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
+                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="card mb-3">
+                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
+                                                                <div class="card-body">
+                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
+                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
+                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
+                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
+                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="card mb-3">
+                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
+                                                                <div class="card-body">
+                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
+                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
+                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
+                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
+                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="card mb-3">
+                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
+                                                                <div class="card-body">
+                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
+                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
+                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
+                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
+                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label>Post Title</label>
+                                                            <input type="text" class="form-control" placeholder="Post Title">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label >Example select</label>
+                                                            <select class="form-control">
+                                                                <option>Category 1</option>
+                                                                <option>Category 2</option>
+                                                                <option>Category 3</option>
+                                                                <option>Category 4</option>
+                                                                <option>Category 5</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Post text</label>
+                                                            <textarea class="form-control" id="editor"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="custom-file" id="customFile">
+                                                                <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                                                                <span class="custom-file-control form-control-file"></span>
+                                                            </label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+    <script>
+        
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                window.editor = editor;
+            } )
+            .catch( err => {
+                console.error( err.stack );
+            } );
+            //console.log(editor.getData());
+    </script>
+    <script>    
+    /* show file value after file select */
+    $('.custom-file-input').on('change',function(){
+        $(this).next('.form-control-file').addClass("selected").html($(this).val());
+    });
+    </script>
+</body>
+</html>

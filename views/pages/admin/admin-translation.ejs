@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    
+    <%- include('../../partials/header') %>
+
+    <div class="container">
+        <div class="blog-decoration">
+            <div class="blog-decorate-top-page-one"></div>
+            <div class="blog-decorate-top-page-two"></div>
+        </div>
+        <div class="pages">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin">Profile</a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin/categories">Categories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin/posts">Posts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="/admin/translation">Translation</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-4 mb-md-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Full Name</h4>
+                                            <p class="card-text">Some info about me.</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <a class="btn btn-block btn-outline-warning text-dark" href="#" role="button">
+                                                    <div class="text-left">
+                                                        <i class="fa fa-2x fa-facebook-official mr-2" aria-hidden="true"></i><span style="vertical-align: 4px;">My Facebook</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a class="btn btn-block btn-outline-warning text-dark" href="#" role="button">
+                                                    <div class="text-left">
+                                                        <i class="fa fa-2x fa-twitter-square mr-2" aria-hidden="true"></i><span style="vertical-align: 4px;">My Twitter</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a class="btn btn-block btn-outline-warning text-dark" href="#" role="button">
+                                                    <div class="text-left">
+                                                        <i class="fa fa-2x fa-instagram mr-2" aria-hidden="true"></i><span style="vertical-align: 4px;">My Instagram</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <p class="text-muted">My status</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-8">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Change your data</h4>
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>New Full Name</label>
+                                                    <input type="text" class="form-control" placeholder="New status">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>New Info about me</label>
+                                                    <input type="text" class="form-control" placeholder="New Info about me">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>New Email address</label>
+                                                    <input type="email" class="form-control" placeholder="New Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Old password</label>
+                                                    <input type="password" class="form-control" placeholder="Old password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>New password</label>
+                                                    <input type="password" class="form-control" placeholder="New password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>New Status</label>
+                                                    <input type="text" class="form-control" placeholder="New status">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style="display: block;">New Avatar</label>
+                                                    <div class="custom-file" id="customFile">
+                                                        <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                                                        <span class="custom-file-control form-control-file"></span>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../../partials/footer') %>
+</body>
+</html>

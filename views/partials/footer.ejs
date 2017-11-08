@@ -1,0 +1,41 @@
+<section class="scroll">
+    <div id="scrollup">
+        <img id="scroll" alt="Прокрутить вверх" src="/images/scrollUp/scroller.png">
+    </div>
+</section>
+
+<footer>
+    <div class="footer-wrapper">
+        <p>&copy; All Rights Reserved. Designed by <a href="https://vk.com/id79397005" target="_blank"><strong><em>Nedashkivsky Maxim</em></strong></a></p>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+ 	var scrollUp = document.getElementById('scrollup');
+     
+     window.onscroll = function () {
+             if ( window.pageYOffset > 350 ) {
+                 scrollUp.style.display = 'block';
+             } else {
+                 scrollUp.style.display = 'none';
+             }
+         };
+     
+     $("#scrollup").click(function(){
+         var scroll = window.pageYOffset;
+     
+         var timerId = setInterval(function() {
+         $(document).scrollTop(scroll);
+         scroll -= 90; 
+     
+         if (scroll < 0) {
+             clearInterval(timerId);
+             window.scrollTo(0, 0);
+         }
+         }, 20);
+     });
+</script>
+<script src="/js/menu.js"></script>
