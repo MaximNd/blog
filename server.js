@@ -2,15 +2,20 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const path = require('path');
+const http = require('http');
+const socketIO = require('socket.io');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const LivesController = require('./controllers/lives_controller');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 // const fileUpload = require('express-fileupload');
 const routes = require('./routes/routes.js');
 
 const app = express();
+const server = http.createServer(app);
+
 
 app.set('views', __dirname + '/views/pages');
 app.set('view engine', 'ejs');
@@ -21,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 app.use(require('express-session')({
-    secret: 'keyboard cat',
+    secret: 'favbjadbfjgdbvjbvasjfvasdhkvfshdgzvgjs',
     resave: false,
     saveUninitialized: false
 }));
@@ -31,7 +36,26 @@ const User = require('./models/user');
 passport.use(new LocalStrategy({ usernameField: 'email' }, User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+
+const io = socketIO(server);
+
+io.on('connection', socket => {
+    console.log('User connected');
+
+    socket.on('createMessage', newMessage => {
+        LivesController.createMessage(newMessage)
+            .then(data => data)
+            .then(message => socket.emit('newMessage', message))
+            .catch(err => console.error('error: ', err));
+        // console.log('NewMessage: ', newMessage);
+        // socket.emit('newMessage', { data: 'data', message: 'ok'});
+    });
+
+    socket.on('disconnect', () => {
+        console.log('User was disconnected');
+    });
+});
 
 const connection = mongoose.connect('mongodb://localhost:27017/blog', {
     useMongoClient: true
@@ -86,4 +110,4 @@ routes(app);
 //     res.render('admin/admin-translation');
 // });
 
-app.listen(3000);
+server.listen(3000);

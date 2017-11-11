@@ -25,113 +25,29 @@
                     <div class="top_menu">
                         <div class="title text-muted">Translation</div>
                     </div>
-                    <ul class="messages">
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
-                        <li class="message left appeared">
-                            <div class="avatar">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" width="60" alt="">
-                            </div>
-                            <div class="text_wrapper">
-                            <div class="text">Hello</div>
-                            </div>
-                        </li>
+                    <ul id="messages" class="messages">
+                        <% for(let i = messages.length - 1; i >= 0; --i) { %>
+                            <li class="message left appeared">
+                                <div class="avatar">
+                                    <img src="/images/<%=messages[i].userId.image%>" width="60" alt="">
+                                </div>
+                                <div class="text_wrapper">
+                                    <div class="text"><%=messages[i].text%></div>
+                                </div>
+                            </li>
+                        <% } %>
                     </ul>
-                    <div class="bottom_wrapper clearfix">
-                        <div class="message_input_wrapper">
-                            <input class="message_input" placeholder="Type your message here..." />
+                    <% if (user && user.role === 'admin') { %>
+                        <div class="bottom_wrapper clearfix">
+                            <div class="message_input_wrapper">
+                                <input name="messageText" class="message_input" placeholder="Type your message here..." />
+                            </div>
+                            <div class="send_message">
+                                <div class="icon"></div>
+                                <div class="text">Send</div>
+                            </div>
                         </div>
-                        <div class="send_message">
-                            <div class="icon"></div>
-                            <div class="text">Send</div>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -146,6 +62,9 @@
     </div>
 
     <%- include('../partials/footer') %>
+    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/liveTranslation.js"></script>
     <script>
             /* (function () {
                 var Message;

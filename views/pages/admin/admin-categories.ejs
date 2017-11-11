@@ -33,9 +33,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/admin/posts">Posts</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/admin/translation">Translation</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="card-body">
@@ -44,15 +41,16 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">All Categories</h4>
-                                            <div class="input-group mb-3">
-                                                <button type="button" class="btn btn-success input-group-addon">Add new</button>
-                                                <input type="text" class="form-control" placeholder="Category name">
-                                            </div>
+                                            <form method="POST" action="/category">
+                                                <div class="input-group mb-3">
+                                                    <button style="cursor: pointer;" type="submit" class="btn btn-success input-group-addon">Add new</button>
+                                                    <input name="name" type="text" class="form-control" placeholder="Category name">
+                                                </div>
+                                            </form>
                                             <div class="list-group" id="list-tab" role="tablist">
-                                                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-                                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-                                                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-                                                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+                                                <% for (let i = 0; i < categories.length; ++i) { %>
+                                                    <a class="list-group-item list-group-item-action <% if (i === 0) { %>active<% } %>" id="<%=categories[i]._id %>-list" data-toggle="list" href="#<%=categories[i]._id %>" role="tab" aria-controls="home"><%=categories[i].name %></a>
+                                                <% } %>
                                             </div>
                                         </div>
                                     </div>
@@ -61,74 +59,29 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="tab-content" id="nav-tabContent">
-                                                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="input-group">
-                                                                        <button type="button" class="btn btn-info input-group-addon">Edit</button>
-                                                                        <input type="text" class="form-control" placeholder="Edit Category name">
+                                                <% for (let i = 0; i < categories.length; ++i) { %>
+                                                    <div class="tab-pane fade show <% if (i === 0) { %>active<% } %>" id="<%=categories[i]._id %>" role="tabpanel" aria-labelledby="<%=categories[i]._id %>-list">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-12 col-sm-6">
+                                                                        <form method="POST" action="/update/category/<%=categories[i]._id  %>">
+                                                                            <div class="input-group">
+                                                                                <button style="cursor: pointer;" type="submit" class="btn btn-info input-group-addon">Edit</button>
+                                                                                <input name="name" type="text" value="<%=categories[i].name %>" class="form-control" placeholder="Edit Category name">
+                                                                            </div>
+                                                                        </form>
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <button type="button" class="btn btn-block btn-danger">Delete</button>
+                                                                    <div class="col-12 col-sm-6">
+                                                                        <form method="POST" action="/delete/category/<%=categories[i]._id  %>">
+                                                                            <button style="cursor: pointer;" type="submit" class="btn btn-block btn-danger">Delete</button>
+                                                                        </form>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="input-group">
-                                                                        <button type="button" class="btn btn-info input-group-addon">Edit</button>
-                                                                        <input type="text" class="form-control" placeholder="Edit Category name">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <button type="button" class="btn btn-block btn-danger">Delete</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="input-group">
-                                                                        <button type="button" class="btn btn-info input-group-addon">Edit</button>
-                                                                        <input type="text" class="form-control" placeholder="Edit Category name">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <button type="button" class="btn btn-block btn-danger">Delete</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-12 col-sm-6">
-                                                                    <div class="input-group">
-                                                                        <button type="button" class="btn btn-info input-group-addon">Edit</button>
-                                                                        <input type="text" class="form-control" placeholder="Edit Category name">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12 col-sm-6">
-                                                                    <button type="button" class="btn btn-block btn-danger">Delete</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <% } %>
                                             </div>
                                         </div>
                                     </div>

@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+        .fa-thumbs-up-ic i {
+            cursor: pointer;
+            transition: color 0.5s !important;
+        }
+        .fa-thumbs-up-ic :hover {
+            color: #FFCD13 !important;
+        }
+    </style>
 </head>
 <body>
     
@@ -22,116 +31,47 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card border-light mb-3">
-                        <img class="card-img-top" src="https://img00.deviantart.net/96e1/i/2011/260/3/2/september_striations_panorama_by_billyunderscorebwa-d3j3kzc.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="/images/<%=post.image%>" alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">Title <%= id %></h4>
+                            <h4 class="card-title"><%=post.title%></h4>
+                            <span class="mr-2 text-muted">Category: <%=post.category.name %></span><span class="text-muted mr-2"><i class="fa fa-eye mr-1" aria-hidden="true"></i><span id="views"><%=post.views %></span></span>
+                            <div class="float-right">
+                                <span class="text-muted fa-thumbs-up-ic"><i id="likes" class="fa fa-3x mr-1 fa-thumbs-up" aria-hidden="true"></i><span style="font-size: 25px;"><%=post.likes %></span></span>
+                            </div>
                             <p class="card-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus non velit quasi unde nulla eveniet, esse autem, qui explicabo cumque! Officia est quis esse soluta enim repudiandae, ducimus possimus!
-                                Adipisci odio eos repudiandae quos officiis laboriosam ab ratione quasi quo dignissimos facere, similique aliquid molestiae minima maiores voluptatem a optio! Similique qui ratione libero quae velit eaque id modi.
-                                Earum, temporibus blanditiis. Velit, ea? Vel perspiciatis vitae voluptatem, maiores, obcaecati commodi omnis repellat dolorum rem porro totam temporibus sit beatae ipsum itaque? Ad officia consequatur iusto ipsam quisquam ipsum.
-                                Ex consequuntur architecto sint magni. Non alias temporibus, animi voluptatem praesentium assumenda consequuntur quibusdam enim sapiente quam ipsum suscipit culpa voluptate quos numquam illum, omnis facere nobis sint nam dicta!
-                                Ipsum alias repellat consectetur molestias maxime repellendus facilis repudiandae. Eos doloribus cum fuga vero ut corrupti aperiam voluptates harum enim, nostrum non, animi temporibus consectetur accusantium corporis sit, quisquam sunt!
-                                Nostrum ipsa, quas doloribus dolorem eveniet officia expedita harum distinctio impedit sunt animi porro hic excepturi, libero quod fugit aliquid exercitationem dolores. Laboriosam illum saepe dolorum labore tenetur sequi unde.
-                                Magnam nobis accusantium libero voluptatibus illo ratione iure reiciendis, autem quisquam rem aliquam dicta nihil explicabo magni impedit quibusdam, cumque et consequuntur cupiditate! Ducimus excepturi molestiae hic nesciunt recusandae quisquam.
-                                Deleniti harum qui quidem atque, ipsa deserunt id beatae nostrum cum itaque. Adipisci hic numquam, soluta eligendi illo harum tenetur maiores sit! Debitis, fugiat inventore? Perspiciatis velit sed architecto ipsa.
-                                Voluptas quisquam natus sit, quasi doloribus aspernatur laborum adipisci, quos quam, et esse velit! Fuga magnam deleniti, est necessitatibus facere repudiandae dicta dolor quod dolorem in autem officiis fugit laudantium!
-                                Tempora quo corporis dolorem non nemo explicabo dicta libero dolor, tempore rem eaque alias exercitationem nihil excepturi quibusdam reprehenderit quasi illo, odio culpa porro necessitatibus molestiae asperiores cupiditate beatae! Id.
-                                Quis, animi dolorem numquam perferendis magnam fugiat eum assumenda velit molestiae aperiam! Illo, possimus eaque adipisci alias nam, quaerat illum cum eum iure saepe ipsam quibusdam repellendus ducimus debitis quos.
-                                Voluptates, vel cumque? Soluta quia, libero eius odit distinctio nam, quidem voluptatum recusandae corrupti enim debitis quod et rem quas vitae labore fugit in amet itaque cupiditate facilis neque placeat?
-                                Voluptate error, veritatis deserunt atque quibusdam vero aspernatur culpa repudiandae asperiores quas delectus dolorem. Veritatis, labore in placeat, reprehenderit vel laudantium deserunt, corporis officia provident dicta et natus. Aperiam, inventore.
-                                Aspernatur vitae quibusdam atque adipisci ab earum nisi quo cumque assumenda. Deserunt sit ut, eum quae repellendus suscipit aperiam, blanditiis commodi ipsa saepe corrupti excepturi inventore nam sed rerum consequatur!
-                                Earum animi modi, provident nihil excepturi alias architecto fuga inventore aspernatur accusantium maiores deserunt deleniti distinctio dolore quis cum blanditiis reiciendis dignissimos magnam officiis omnis expedita esse ipsum quasi! Eos.
-                                Impedit minima facere autem neque laboriosam reprehenderit dolorem voluptate sequi quibusdam, illo, vero voluptates, maxime aliquam et mollitia dignissimos. Veritatis reiciendis cumque recusandae corrupti illo non nam reprehenderit molestiae dolore.
-                                Eveniet, earum ex similique soluta repudiandae inventore numquam animi perferendis saepe nostrum perspiciatis veritatis possimus reiciendis adipisci nobis sit, quaerat laborum hic modi expedita beatae sapiente porro veniam! Necessitatibus, cum.
-                                Hic eveniet accusamus sint, nostrum unde adipisci repellat voluptatibus laborum facilis quas dolores amet eius nobis beatae sunt repellendus ea, blanditiis facere officia? Iure rerum nobis maiores quod culpa distinctio?
-                                Sequi modi sit culpa quis! Ad tempore aliquam suscipit temporibus provident laboriosam magnam aliquid. Quo animi minus velit accusamus voluptate et dolores quos pariatur assumenda necessitatibus? Quae ut enim blanditiis.
-                                Voluptate itaque esse, exercitationem quaerat at atque? Temporibus harum quod ullam? Itaque magnam, voluptates debitis harum at sed, magni necessitatibus maiores culpa sequi quidem adipisci corrupti quae quia, dolor voluptatum.
-                                Quasi laboriosam cum illum laborum tenetur at! Sunt adipisci ex, ratione doloribus totam dolores culpa error accusamus repellendus alias, nisi aspernatur quas expedita nostrum repellat quod at tempora autem libero!
-                                Voluptates earum ducimus officiis ea? Deleniti, ad quam consectetur error a maxime, reiciendis, officiis labore officia praesentium aut. Fugiat, iusto neque pariatur omnis mollitia ipsa ex eveniet eos perferendis provident?
-                                Minus, ducimus temporibus. Laborum sunt vero labore natus ullam hic error iusto ea voluptatem non deleniti, facere dolore, ipsum, dolorum et ipsam. Laborum beatae ea esse at sit, suscipit corrupti.
-                                Blanditiis quasi nam aperiam dignissimos quaerat modi eaque praesentium neque, dolor accusantium ab vero nihil impedit odio deserunt temporibus laudantium? Libero cumque dicta dolore voluptatum nisi aliquam, veritatis facilis temporibus.
-                                Incidunt a reiciendis qui doloribus! Laudantium impedit laborum asperiores! Error ad doloremque voluptatibus aperiam eius provident quos id, magni nulla ipsa sint nihil. Delectus sit hic aspernatur id quae explicabo.
-                                Blanditiis, ex deleniti ut placeat facere magnam distinctio laudantium qui eligendi earum. Asperiores nemo corporis ex laboriosam consectetur, sunt similique porro totam saepe aut! Maiores, molestias omnis? Deserunt, dolorum commodi?
-                                Error dolore repellendus omnis sit sint. Recusandae, quis quibusdam ducimus voluptas ipsam consequuntur blanditiis tempore doloremque deserunt quos reprehenderit veritatis possimus sapiente tenetur, officiis corrupti nobis, labore sed ut. Recusandae!
-                                Similique dolore non, asperiores voluptas obcaecati molestiae, eaque officia numquam qui commodi cumque provident incidunt nostrum, repellendus est nam laborum consectetur id mollitia corrupti. Molestias atque accusamus consectetur vero? Quaerat?
-                                Qui, magni. Pariatur maiores ipsa aut quam? Excepturi mollitia ducimus, illo cupiditate veritatis totam praesentium tempore libero consectetur voluptate quas aliquid, nisi magnam odio nihil, doloremque impedit optio quae. Obcaecati.
-                                Architecto, unde quo! Explicabo, rem vitae. Placeat quas perferendis, aut aliquid saepe doloribus illo magnam facilis quasi voluptate earum veniam, sed similique, quod doloremque libero laudantium voluptas at tempore rerum!
+                                <%-post.text%>
                             </p>
-                            <p class="card-text"><small class="text-muted">Uploaded at: 11.02.2017</small></p>
+                            <p class="card-text"><small class="text-muted"><%=post.uploaded.toString().slice(0, 24)%></small></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="comments col-md-12" id="comments">
-                        <!-- /comment -->
-                        <div class="row pt-2 mb-3">
-                            <div class="col-12">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Leave your comment</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="" class="btn btn-sm btn-primary">Comment</a>
+                        <!-- /commentForm -->
+                        <% if (user) { %>
+                            <div class="row pt-2 mb-3">
+                                <div class="col-12">
+                                    <form id="commentForm">
+                                        <div class="form-group">
+                                            <label>Leave your comment</label>
+                                            <textarea name="comment" class="form-control" rows="3"></textarea>
                                         </div>
-                                    </div>
-                                </form>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <button style="cursor:pointer;" class="btn btn-sm btn-primary">Comment</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
+                        <% } else { %>
+                            <h4 class="text-muted"><a href="/sign-in">Sign-In</a> to leave the comments</h4>
+                        <% } %>
 
                         <h3 class="mb-2">Comments</h3>
-                        <!-- comment -->
-                        <div class="comment mb-2 row">
-                            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-                                <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m103.jpg" alt="avatar"></a>
-                            </div>
-                            <div class="comment-content col-md-11 col-sm-10">
-                                <h6 class="small comment-meta"><a href="#">admin</a> Today, 2:38</h6>
-                                <div class="comment-body">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href>http://wwwwww.com</a> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                        <br>
-                                        <a href="" class="text-right small"><i class="ion-reply"></i> Reply</a>
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <!-- reply is indented -->
-                            <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
-                                <div class="row">
-                                    <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-                                        <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg" alt="avatar"></a>
-                                    </div>
-                                    <div class="comment-content col-md-11 col-sm-10 col-12">
-                                        <h6 class="small comment-meta"><a href="#">phildownney</a> Today, 12:31</h6>
-                                        <div class="comment-body">
-                                            <p>Really?? Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
-                                                <br>
-                                                <a href="" class="text-right small"><i class="ion-reply"></i> Reply</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /reply is indented -->
-                        </div>
-                        <!-- /comment -->
-                        <!-- comment -->
-                        <div class="comment mb-2 row">
-                            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-                                <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/w102.jpg" alt="avatar"></a>
-                            </div>
-                            <div class="comment-content col-md-11 col-sm-10">
-                                <h6 class="small comment-meta"><a href="#">maslarino</a> Yesterday, 5:03 PM</h6>
-                                <div class="comment-body">
-                                    <p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                        <br>
-                                        <a href="" class="text-right small"><i class="ion-reply"></i> Reply</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>            
+                        <div id="commentSection">
+
+                        </div>        
                     </div>
                 </div>
             </div>
@@ -139,5 +79,87 @@
     </div>
 
     <%- include('../partials/footer') %>
+    <script>
+
+        (function() {
+            let likes = parseInt('<%=post.likes %>');
+
+            $('#likes').click(function () {
+                $.ajax({
+                    url: '/post/<%=post.id %>',
+                    type: 'PUT',
+                    data: {
+                        doc: { likes: likes + 1 }
+                    },
+                    success: function(data) {
+                        $('#likes').next().text(++likes);
+                    }
+                });    
+            });
+    
+            $.ajax({
+                url: '/post/<%=post.id %>',
+                type: 'PUT',
+                data: {
+                    doc: { views: parseInt('<%=post.views %>') + 1 }
+                },
+                success: function(data) {
+                    $('#views').text(parseInt('<%=post.views %>') + 1);
+                }
+            });
+    
+            $.ajax({
+                url: '/comments/post/<%=post.id %>',
+                type: 'GET',
+                success: function(data) {
+                    let comments = '';
+    
+                    data.forEach(comment => {
+                        comments += '<div class="comment mb-2 row">' +
+                                '<div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">' +
+                                    '<a href=""><img class="mx-auto rounded-circle img-fluid" src="/images/' + comment.userId.image + '" alt="avatar"></a>'+ 
+                                '</div>' +
+                                '<div class="comment-content col-md-11 col-sm-10">' +
+                                    '<h6 class="small comment-meta"><a href="#">' + comment.userId.fullName + '</a> ' + comment.date.toString().slice(0, 24) + '</h6>' +
+                                    '<div class="comment-body">' +
+                                        '<p>' + comment.text + '</p>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>';
+                    });
+                    $('#commentSection').prepend(comments);
+                }
+            });
+    
+            $('#commentForm').submit(function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                let text = $('textarea[name=comment]').val();
+                $.ajax({
+                    url: '/comment',
+                    type: 'POST',
+                    data: {
+                        comment: {
+                            text: text,
+                            postId: '<%=post.id %>'
+                        }
+                    },
+                    success: function(data) {
+                        $('#commentSection').prepend('<div class="comment mb-2 row">' +
+                                                        '<div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">' +
+                                                            '<a href=""><img class="mx-auto rounded-circle img-fluid" src="/images/' + data.avatar + '" alt="avatar"></a>'+ 
+                                                        '</div>' +
+                                                        '<div class="comment-content col-md-11 col-sm-10">' +
+                                                            '<h6 class="small comment-meta"><a href="#">' + data.fullName + '</a> ' + new Date(data.date).toString().slice(0, 24) + '</h6>' +
+                                                            '<div class="comment-body">' +
+                                                                '<p>' + data.text + '</p>' +
+                                                            '</div>' +
+                                                        '</div>' +
+                                                    '</div>');
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <div class="blog-decoration">
+            <div class="blog-decorate-top-page-one"></div>
+            <div class="blog-decorate-top-page-two"></div>
+        </div>
+        <div class="pages">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <div class="row">
+                                <div class="col-2">
+                                    <h2>Posts</h2>
+                                </div>
+                                <div class="col-10">
+                                    <form method="GET" action="/posts/search">
+                                        <div class="input-group mb-3">
+                                            <button style="cursor: pointer;" type="submit" class="btn btn-success input-group-addon">Search</button>
+                                            <input name="tag" type="text" class="form-control" placeholder="Search parameter">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <% for (let i = 0; i < posts.length; ++i) { %>
+                                <div class="card mb-3">
+                                    <img class="card-img-top" src="/images/<%=posts[i].image %>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <% if (typeof user !== 'undefined' && user.role === 'admin') { %>
+                                            <a href="/admin/post/<%=posts[i]._id%>/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
+                                            <form method="POST" action="/delete/post/<%=posts[i]._id%>">
+                                                <button style="cursor:pointer;" type="submit" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
+                                            </form>
+                                        <% } %>
+                                        <h4 class="card-title"><a href="/post/<%=posts[i]._id %>"><%=posts[i].title %></a></h4>
+                                        <span class="mr-2 text-muted">Category: <%=posts[i].category.name %></span><span class="text-muted mr-2"><i class="fa fa-eye mr-1" aria-hidden="true"></i><%=posts[i].views %></span><span class="text-muted"><i class="fa mr-1 fa-thumbs-up" aria-hidden="true"></i><%=posts[i].likes %></span>
+                                        <p class="card-text"><%-posts[i].text %></p>
+                                        <p class="card-text"><small class="text-muted">Uploaded at <%=posts[i].uploaded.toString().slice(0, 24) %></small></p>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="col-12">
+                            <nav aria-label="Page navigation example">
+                                    <% if (pageCount > 1) { %>
+                                        <ul class="pagination justify-content-center">
+                                            <% if (currentPage > 1) { %>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="/posts/search/<%=tag%>/?page=1&tag=<%=tag%>" tabindex="-1">&laquo;</a>
+                                                </li>
+                                            <% } %>
+                                            <% var i = 1;
+                                            if (currentPage > 5) {
+                                                i = +currentPage - 4;
+                                            } %>
+                                            <% if (i !== 1) { %>
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#">...</a>
+                                                </li>
+                                            <% } %>
+                                            <% for (i; i<=pageCount; i++) { %>
+                                                <% if (currentPage == i) { %>
+                                                    <li class="page-item active"><a class="page-link" href="#"><%= i %></a></li>
+                                                <% } else { %>
+                                                    <li class="page-item"><a class="page-link" href="/posts/search/?page=<%= i %>&tag=<%=tag%>"><%= i %></a></li>
+                                                <% } %>
+                                                <% if (i == (+currentPage + 4)) { %>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#">...</a>
+                                                    </li>
+                                                <% break; } %>
+                                            <% } %>
+                                            <% if (currentPage != pageCount) { %>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="/posts/search/?page=<%= pageCount %>&tag=<%=tag%>">&raquo;</a>
+                                                </li>
+                                            <% } %>
+                                        </ul>
+                                    <% } %>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+    <link href="/js/aehlke-tag-it-6ccd2de/css/jquery.tagit.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     
@@ -33,9 +35,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" href="/admin/posts">Posts</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/admin/translation">Translation</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="card-body">
@@ -51,88 +50,113 @@
                                         <div class="card-body">
                                             <div class="tab-content" id="nav-tabContent">
                                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                    <div class="col-12 mb-2">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <form method="GET" action="/posts/search">
+                                                                    <div class="input-group mb-3">
+                                                                        <button style="cursor: pointer;" type="submit" class="btn btn-success input-group-addon">Search</button>
+                                                                        <input name="tag" type="text" class="form-control" placeholder="Search parameter">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
-                                                        <div class="col-sm-12 col-md-6">
-                                                            <div class="card mb-3">
-                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
-                                                                <div class="card-body">
-                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
-                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
-                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
-                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
-                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
+                                                        <% for (let i = 0; i < posts.length; ++i) { %>
+                                                            <div class="col-sm-12 col-md-6">
+                                                                <div class="card mb-3">
+                                                                    <img class="card-img-top" src="/images/<%=posts[i].image%>" alt="Card image cap">
+                                                                    <div class="card-body">
+                                                                        <a href="/admin/post/<%=posts[i]._id%>/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
+                                                                        <form method="POST" action="/delete/post/<%=posts[i]._id%>">
+                                                                            <button style="cursor:pointer;" type="submit" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
+                                                                        </form>
+                                                                        <h4 class="card-title"><a href="/post/<%=posts[i]._id%>"><%=posts[i].title%></a></h4>
+                                                                        <span class="mr-2 text-muted">Category: <%=posts[i].category.name%></span><span class="text-muted mr-2"><i class="fa fa-eye mr-1" aria-hidden="true"></i><%=posts[i].views%></span><span class="text-muted"><i class="fa mr-1 fa-thumbs-up" aria-hidden="true"></i><%=posts[i].likes %></span>
+                                                                        <p class="card-text"><%-posts[i].text %></p>
+                                                                        <p class="card-text"><small class="text-muted">Uploaded at <%=posts[i].uploaded.toString().slice(0, 24) %></small></p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-12 col-md-6">
-                                                            <div class="card mb-3">
-                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
-                                                                <div class="card-body">
-                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
-                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
-                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
-                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
-                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12 col-md-6">
-                                                            <div class="card mb-3">
-                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
-                                                                <div class="card-body">
-                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
-                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
-                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
-                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
-                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-12 col-md-6">
-                                                            <div class="card mb-3">
-                                                                <img class="card-img-top" src="http://www.eurasiatravel.kz/assets/images/resources/2274/7d3a9b87f8feb33dc9d9bc8194314e9073cd7eb4.jpg" alt="Card image cap">
-                                                                <div class="card-body">
-                                                                    <a href="/admin/post/1/edit" role="button" class="mb-2 btn btn-block btn-outline-info">Edit</a>
-                                                                    <button style="cursor:pointer;" class="mb-2 btn btn-block btn-outline-danger">Delete</button>
-                                                                    <h4 class="card-title"><a href="/post/1">Card title</a></h4>
-                                                                    <span class="mr-2 text-muted">Category: post1c</span><span class="text-muted"><i class="fa fa-eye mr-1" aria-hidden="true"></i>12</span>
-                                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                                    <p class="card-text"><small class="text-muted">Uploaded at 11.02.2017</small></p>
-                                                                </div>
-                                                            </div>
+                                                        <% } %>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <nav aria-label="Page navigation example">
+                                                                <% if (pageCount > 1) { %>
+                                                                    <ul class="pagination justify-content-center">
+                                                                        <% if (currentPage > 1) { %>
+                                                                            <li class="page-item">
+                                                                                <a class="page-link" href="/admin/posts?page=1" tabindex="-1">&laquo;</a>
+                                                                            </li>
+                                                                        <% } %>
+                                                                        <% var i = 1;
+                                                                        if (currentPage > 5) {
+                                                                            i = +currentPage - 4;
+                                                                        } %>
+                                                                        <% if (i !== 1) { %>
+                                                                            <li class="page-item disabled">
+                                                                                <a class="page-link" href="#">...</a>
+                                                                            </li>
+                                                                        <% } %>
+                                                                        <% for (i; i<=pageCount; i++) { %>
+                                                                            <% if (currentPage == i) { %>
+                                                                                <li class="page-item active"><a class="page-link" href="#"><%= i %></a></li>
+                                                                            <% } else { %>
+                                                                                <li class="page-item"><a class="page-link" href="/admin/posts?page=<%= i %>"><%= i %></a></li>
+                                                                            <% } %>
+                                                                            <% if (i == (+currentPage + 4)) { %>
+                                                                                <li class="page-item disabled">
+                                                                                    <a class="page-link" href="#">...</a>
+                                                                                </li>
+                                                                            <% break; } %>
+                                                                        <% } %>
+                                                                        <% if (currentPage != pageCount) { %>
+                                                                            <li class="page-item">
+                                                                                <a class="page-link" href="/admin/posts?page=<%= pageCount %>">&raquo;</a>
+                                                                            </li>
+                                                                        <% } %>
+                                                                    </ul>
+                                                                <% } %>
+                                                            </nav>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                                    <form>
+                                                    <% if (categories.length > 0) { %>
+                                                    <form id="addPost" method="POST" action="/post" encType="multipart/form-data">
                                                         <div class="form-group">
                                                             <label>Post Title</label>
-                                                            <input type="text" class="form-control" placeholder="Post Title">
+                                                            <input type="text" name="title" class="form-control" placeholder="Post Title">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label >Example select</label>
-                                                            <select class="form-control">
-                                                                <option>Category 1</option>
-                                                                <option>Category 2</option>
-                                                                <option>Category 3</option>
-                                                                <option>Category 4</option>
-                                                                <option>Category 5</option>
+                                                            <label>Category</label>
+                                                            <select name="category" class="form-control">
+                                                                <% for(let i = 0; i < categories.length; ++i) { %>
+                                                                    <option value="<%=categories[i]._id %>"><%=categories[i].name %></option>
+                                                                <% } %>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Post text</label>
-                                                            <textarea class="form-control" id="editor"></textarea>
+                                                            <textarea name="text" class="form-control" id="editor"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Tags</label>
+                                                            <input type="text" name="tags" data-role="tagsinput" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="custom-file" id="customFile">
-                                                                <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                                                                <input name="image" type="file" class="custom-file-input" aria-describedby="fileHelp">
                                                                 <span class="custom-file-control form-control-file"></span>
                                                             </label>
                                                         </div>
+                                                        <button class="btn btn-success">Send</button>
                                                     </form>
+                                                    <% } else { %>
+                                                        <h4 class="text-muted">Make some categories to create a new post!</h4>
+                                                    <% } %>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,8 +172,11 @@
 
     <%- include('../../partials/footer') %>
     <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.1/classic/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/aehlke-tag-it-6ccd2de/js/tag-it.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        
+        $("input[name='tags']").tagit();
+            
         ClassicEditor
             .create( document.querySelector( '#editor' ) )
             .then( editor => {
@@ -159,6 +186,18 @@
                 console.error( err.stack );
             } );
             //console.log(editor.getData());
+
+            $('#addPost').submit(function(event) {
+                //event.preventDefault();
+                let tagsInput = $("input[name='tags']");
+                let tags = tagsInput.tagit("assignedTags");
+                tagsInput.val(JSON.stringify(tags));
+                
+                let textInput = $("textarea[name='text']");
+                let editorData = editor.getData();
+                textInput.val(editorData);
+            });
+
     </script>
     <script>    
     /* show file value after file select */

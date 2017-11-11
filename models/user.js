@@ -9,6 +9,18 @@ const UserSchema = new Schema({
        index: true,
        unique: true
    },
+   role: {
+       type: String,
+       enum: ['admin', 'user']
+   },
+   info: {
+       type: String,
+       required: false
+   },
+   status: {
+        type: String,
+        required: false
+    },
    image: String
 });
 

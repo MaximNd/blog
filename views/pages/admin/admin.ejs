@@ -33,19 +33,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/admin/posts">Posts</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/admin/translation">Translation</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 col-lg-4 mb-md-4">
                                     <div class="card">
-                                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60sAaSDbY3t-EcFXgH0bYlphTnogAfFOwPIHH4U79jRiG7ZQ4" alt="Card image cap">
+                                        <img class="card-img-top" src="/images/<%=user.image%>" alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title">Full Name</h4>
-                                            <p class="card-text">Some info about me.</p>
+                                            <h4 class="card-title"><%=user.fullName%></h4>
+                                            <p class="card-text"><%=user.info%></p>
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">
@@ -71,7 +68,7 @@
                                             </li>
                                         </ul>
                                         <div class="card-body">
-                                            <p class="text-muted">My status</p>
+                                            <p class="text-muted"><%=user.status%></p>
                                         </div>
                                     </div>
                                 </div>
@@ -79,35 +76,35 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">Change your data</h4>
-                                            <form>
+                                            <form method="POST" action="/update/user/<%=user._id%>" encType="multipart/form-data">
                                                 <div class="form-group">
                                                     <label>New Full Name</label>
-                                                    <input type="text" class="form-control" placeholder="New status">
+                                                    <input name="fullName" value="<%=user.fullName%>" type="text" class="form-control" placeholder="New status">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>New Info about me</label>
-                                                    <input type="text" class="form-control" placeholder="New Info about me">
+                                                    <input name="info" value="<%=user.info%>" type="text" class="form-control" placeholder="New Info about me">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>New Email address</label>
-                                                    <input type="email" class="form-control" placeholder="New Enter email">
+                                                    <input name="email" value="<%=user.email%>" type="email" class="form-control" placeholder="New Enter email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Old password</label>
-                                                    <input type="password" class="form-control" placeholder="Old password">
+                                                    <input name="oldPassword" type="password" class="form-control" placeholder="Old password">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>New password</label>
-                                                    <input type="password" class="form-control" placeholder="New password">
+                                                    <input name="newPassword" type="password" class="form-control" placeholder="New password">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>New Status</label>
-                                                    <input type="text" class="form-control" placeholder="New status">
+                                                    <input name="status" value="<%=user.status%>" type="text" class="form-control" placeholder="New status">
                                                 </div>
                                                 <div class="form-group">
                                                     <label style="display: block;">New Avatar</label>
                                                     <div class="custom-file" id="customFile">
-                                                        <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+                                                        <input name="image" type="file" class="custom-file-input" aria-describedby="fileHelp">
                                                         <span class="custom-file-control form-control-file"></span>
                                                     </div>
                                                 </div>

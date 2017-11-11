@@ -1,12 +1,23 @@
 <header class="container">
     <div class="header-wrapper">
         <div class="reg">
-            <p>
-                <a href="/register">Registration</a>
-            </p>
-            <p>
-                <a href="/sign-in">Sign in</a>
-            </p>
+            <% if (typeof user === 'undefined') { %>
+                <p>
+                    <a href="/register">Registration</a>
+                </p>
+                <p>
+                    <a href="/sign-in">Sign in</a>
+                </p>
+            <% } else {%>
+                <% if (user.role === 'admin') { %>
+                    <p>
+                        <a href="/admin">Admin panel</a>
+                    </p>
+                <% } %>
+                <p>
+                    <a href="/logout">Logout</a>
+                </p>
+            <% } %>
         </div>
         <div class="logo">
             <a href="/"><h1>My Blog</h1></a>
