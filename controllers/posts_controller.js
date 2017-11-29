@@ -27,8 +27,14 @@ module.exports = {
         }
         let limit = 2;
         let currentPage = (skip === 0) ? 1 : skip + 1;
-        Post.find({ tags: new RegExp('^' + req.query.tag + '$') }).sort({ _id: -1 }).populate('category')
-            .then(posts => res.render('post-search', { user: req.user, posts, currentPage, pageCount: 3, tag: req.query.tag }));
+        if (typeof req.query.tag === 'undefined' && typeof req.query.category !== 'undefined') {
+            Post.find({}).populate({ path: 'category', match: { name: new RegExp(req.query.category, 'gi')} })
+                .then(posts => res.render('post-search', { user: req.user, posts: posts.filter((post => post.category !== null)), currentPage, pageCount: 3, category: req.query.category }));
+        } else {
+            Post.find({ tags: new RegExp(req.query.tag, 'gi') }).sort({ _id: -1 }).populate('category')
+                .then(posts => res.render('post-search', { user: req.user, posts, currentPage, pageCount: 3, tag: req.query.tag }));
+        }
+        
     },
     createPost(req, res, next) {
         const imageName = uniqid('image-') + req.files.image.name;
